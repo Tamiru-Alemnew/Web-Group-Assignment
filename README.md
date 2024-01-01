@@ -1,6 +1,8 @@
 # Web-Group-Assignment
 
-## Title: - Expense Tracker
+## Title: -  FamilyCash Manager
+**Description**:
+FamilyCash Manager is a practical web application designed to simplify family expense tracking. The system introduces two key roles: "Parent" and "Child." Parents have comprehensive control, managing overall family expenses and overseeing roles. Children have a simpler interface, focusing on tracking their personal expenses independently.
 
 ### Group Members:
 
