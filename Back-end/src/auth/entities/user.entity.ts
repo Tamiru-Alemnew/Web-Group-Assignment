@@ -18,7 +18,6 @@ export class User {
 
   async checkPassword(password: string) {
     const newPassword: string = await bcrypt.hash(password, this.salt);
-
     return this.password === newPassword;
   }
 }
