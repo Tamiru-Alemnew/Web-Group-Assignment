@@ -48,6 +48,7 @@ export class AuthService {
 
   async logIn(
     authCredentialsDto: AuthCredentialsDto,
+    response,
   ): Promise<{ accesToken: string; role: string }> {
     const { email, role } =
       await this.validateUserCredentials(authCredentialsDto);
@@ -59,6 +60,11 @@ export class AuthService {
     const payload: JwtPayload = { email };
     const accesToken = await this.jwtService.sign(payload);
 
+    response.cookie('auth', accesToken, {
+        httpOnly: true,
+        secure: false,
+        sameSite: 'lax',
+      })
     return { accesToken, role };
   }
 
@@ -80,5 +86,12 @@ export class AuthService {
 
   async hashPassword(password: string, salt: string): Promise<string> {
     return await bcrypt.hash(password, salt);
+  }
+
+  async findOne(email: any): Promise<User> {
+     const user: User = await this.userRepository.findOne({
+       where: { email },
+     });
+    return user;
   }
 }

@@ -18,8 +18,19 @@ document
 
     if (!response.ok) {
       const errorMessage = await response.text();
-      document.getElementById("errorMessage").textContent = errorMessage;
+      const errorMessageResponse = JSON.parse(errorMessage);
+      document.getElementById("errorMessage").textContent = errorMessageResponse.message;
     } else {
+      
+      const logData= await fetch("http://localhost:3000/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const { accesToken } = await logData.json();
+      document.cookie = `auth=${accesToken}`;
       if(role =="parent"){
         window.location.href = "parent.html";
       }else if(role =="children"){
@@ -27,3 +38,4 @@ document
       }
     }
   });
+

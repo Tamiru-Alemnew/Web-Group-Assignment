@@ -2,7 +2,7 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
   event.preventDefault();
 
   const email = document.getElementById("loginEmail").value;
-  console.log(email)
+
   const password = document.getElementById("loginPassword").value;
 
   const response = await fetch("http://localhost:3000/auth/login", {
@@ -18,10 +18,8 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
   const errorMessage = JSON.parse(errorMessageResponse);
   document.getElementById("loginErrorMessage").textContent = errorMessage.message;
   } else {
-    const { token, role } = await response.json();
-    
-    localStorage.setItem("token", token);
-
+    const { accesToken, role } = await response.json();
+    document.cookie = `auth=${accesToken}`;
     if (role === "parent") {
       window.location.href = "parent.html";
     } else if (role === "children") {

@@ -13,6 +13,7 @@ import { Expense } from '../expense/entity/expense.entity';
   imports: [
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
+      global: true,
       secret: 'secretKey',
       signOptions: {
         expiresIn: 3600,

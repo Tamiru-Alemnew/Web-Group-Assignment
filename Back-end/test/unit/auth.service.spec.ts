@@ -62,8 +62,8 @@ describe('AuthService', () => {
         role: authCredentialsDto.role,
       });
     jwtService.sign = jest.fn().mockResolvedValue('accessToken');
-
-    const result = await service.logIn(authCredentialsDto);
+    const mockResponse = { cookie: jest.fn() };
+    const result = await service.logIn(authCredentialsDto, mockResponse);
 
     expect(result).toEqual({
       accesToken: 'accessToken',

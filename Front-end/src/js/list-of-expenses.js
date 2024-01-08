@@ -1,5 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", async function () {
+
   const categories = await getAllCategories();
 
   const categorySelect = document.getElementById("category-select");
@@ -106,3 +107,10 @@ async function deleteExpense(id) {
 }
 
 document.addEventListener("DOMContentLoaded", populateTable);
+document.addEventListener("DOMContentLoaded", async () => {
+ const auth = document.cookie.split("=")[1];
+ console.log(auth , "authhhhhhhhhhhhh")
+ if (!auth) {
+   window.location.href = "log in page.html";
+ }
+})

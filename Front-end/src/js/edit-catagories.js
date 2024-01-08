@@ -1,7 +1,7 @@
 function addCategory() {
   var input = document.getElementById("newCategoryInput");
   var categoryName = input.value.trim();
-
+  console.log(categoryName);
   if (categoryName !== "") {
     fetch("http://localhost:3000/category", {
       method: "POST",
@@ -73,4 +73,15 @@ function deleteCategory(button, id) {
     .catch((error) => {
       console.error("Error:", error);
     });
+}
+
+window.onload = function () {
+  const auth = window.coockie.split("=")[1];
+  if (!auth) {
+    window.location.href = "log in page.html";
+  }
+};
+
+function done() {
+  window.location.href = "parent.html";
 }

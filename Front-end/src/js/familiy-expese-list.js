@@ -48,3 +48,9 @@ async function populateTable() {
 }
 
 window.addEventListener("DOMContentLoaded", populateTable);
+window.addEventListener("DOMContentLoaded", async () => {
+ const auth = window.coockie.split("=")[1];
+ if (!auth) {
+   window.location.href = "log in page.html";
+ }
+})
