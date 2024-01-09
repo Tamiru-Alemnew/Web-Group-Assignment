@@ -2,13 +2,14 @@
 <html>
 <head>
   <title>Create Account Page</title>
-  <link rel="stylesheet" type="text/css" href="../styles.css">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 <body>
   <header class="header">money matters you lets safe our money bel bel </header>
   <div class="container">
     <h2 class="head">Create Your Free Account</h2>
-    <form>
+    <form id="signupForm">
+      <div id="errorMessage" style="color: red;"></div>
       <div class="form-group">
         <label for="fullname">Full Name:</label>
         <input type="text" id="Fullname"placeholder="fullname" fullname" required>
@@ -20,18 +21,22 @@
       <div class="form-group">
         <label for="password">Password:</label>
         <input type="password"placeholder="password" id="password" name="password" required>
-        <p>Are your forgot Password ?</p>
+      </div>
+      <div class="form-group">
+        <label for="role">Role:</label>
+        <select id="role" name="role" required>
+          <option value="">Select a role</option>
+          <option value="parent">Parent</option>
+          <option value="children">Children</option>
+        </select>
       </div>
       <div class="form-group">
         <button type="submit">Create Account</button>
-        <p>Already have an Account? <a href="#">Login</a></p>
+        <p>Already have an Account? <a href="./log in page.html">Login</a></p>
       </div>
     </form>
-     <P class="OR">OR</P>
-     <div >
-      <h1 class="container">Sign Up with Google</h1>
-      <button class="google-button">Sign Up with Google</button>
   </div>
   </div>
+  <script src="./js/createAccount.js"></script>
 </body>
 </html>
