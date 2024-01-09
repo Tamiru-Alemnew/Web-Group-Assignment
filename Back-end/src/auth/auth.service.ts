@@ -26,20 +26,21 @@ export class AuthService {
     const user: User = new User();
 
     user.salt = await bcrypt.genSalt();
-    user.username = authCredentialsDto.username;
+    user.email = authCredentialsDto.email;
+    user.role = authCredentialsDto.role;
     user.password = await this.hashPassword(
       authCredentialsDto.password,
       user.salt,
     );
-
     try {
       await this.userRepository.save(user);
     } catch (error) {
       if (error.code == '23505') {
         throw new ConflictException(
-          `User with the username ${user.username} already exists. Pick another username.`,
+          `User with the email ${user.email} already exists.`,
         );
       } else {
+        console.log(error)
         throw new InternalServerErrorException();
       }
     }
@@ -48,14 +49,14 @@ export class AuthService {
   async logIn(
     authCredentialsDto: AuthCredentialsDto,
   ): Promise<{ accesToken: string }> {
-    const username: string =
+    const email: string =
       await this.validateUserCredentials(authCredentialsDto);
 
-    if (!username) {
-      throw new UnauthorizedException(`Something is wrong.`);
+    if (!email) {
+      throw new UnauthorizedException(`Something went wrong`);
     }
 
-    const payload: JwtPayload = { username };
+    const payload: JwtPayload = { email};
     const accesToken = await this.jwtService.sign(payload);
 
     return { accesToken };
@@ -64,14 +65,14 @@ export class AuthService {
   async validateUserCredentials(
     authCredentialsDto: AuthCredentialsDto,
   ): Promise<string> {
-    let { username, password } = authCredentialsDto;
+    let { email, password } = authCredentialsDto;
 
     const user: User = await this.userRepository.findOne({
-      where: { username },
+      where: { email },
     });
 
     if (user && (await user.checkPassword(password))) {
-      return username;
+      return email;
     } else {
       return null;
     }

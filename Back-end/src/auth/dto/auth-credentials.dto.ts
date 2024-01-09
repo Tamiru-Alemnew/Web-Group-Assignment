@@ -1,10 +1,9 @@
-import { IsString, Matches, Max, MaxLength, MinLength } from 'class-validator';
+import { IsEmail, IsString, Matches, MaxLength, MinLength, isString } from 'class-validator';
 
 export class AuthCredentialsDto {
   @IsString()
-  @MinLength(6)
-  @MaxLength(20)
-  username: string;
+  @IsEmail()
+  email: string;
 
   @IsString()
   @MinLength(8)
@@ -17,4 +16,7 @@ export class AuthCredentialsDto {
     },
   )
   password: string;
+
+  @IsString()
+  role:string
 }
