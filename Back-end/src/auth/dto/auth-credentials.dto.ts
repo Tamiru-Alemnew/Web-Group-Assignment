@@ -17,6 +17,5 @@ export class AuthCredentialsDto {
   )
   password: string;
 
-  @IsString()
-  role:string
+  role:any;
 }

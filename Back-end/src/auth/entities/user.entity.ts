@@ -2,6 +2,7 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn, Unique } from 'typeo
 import * as bcrypt from 'bcrypt';
 import { IsEmail } from 'class-validator';
 import { Expense } from '../../expense/entity/expense.entity';
+import { UserRole } from 'src/userRole/role.enum';
 @Entity()
 @Unique(['email'])
 export class User {
@@ -18,8 +19,8 @@ export class User {
   @Column()
   salt: string;
 
-  @Column({ nullable: true })
-  role: string;
+  @Column({ type: 'enum', enum: UserRole, nullable: true })
+  role: UserRole;
 
   @OneToMany(() => Expense, (expense) => expense.child)
   expenses: Expense[];
