@@ -20,9 +20,9 @@ export class CategoryController {
   }
 
   @Get(':id')
-  getCategoryById(@Param('id') id: string) {
+  getCategoryById(@Param('id') id: any) {
     return this.categoryService.findOne(id);
-  }
+  } 
 
   @Post()
   createCategory(@Body() category: Category) {
@@ -30,12 +30,12 @@ export class CategoryController {
   }
 
   @Put(':id')
-  updateCategory(@Param('id') id: string, @Body() category: Category) {
+  updateCategory(@Param('id') id: any, @Body() category: Category) {
     return this.categoryService.update(id, category);
   }
 
   @Delete(':id')
-  deleteCategory(@Param('id') id: string) {
+  deleteCategory(@Param('id') id: any) {
     return this.categoryService.remove(id);
   }
 }

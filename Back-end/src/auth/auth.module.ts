@@ -6,6 +6,8 @@ import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './jwt.strategy';
 import { User } from './entities/user.entity';
+import { Category } from 'src/category/category.entity';
+import { Expense } from 'src/expense/entity/expense.entity';
 
 @Module({
   imports: [
@@ -16,17 +18,7 @@ import { User } from './entities/user.entity';
         expiresIn: 3600,
       },
     }),
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'localhost',
-      port: 5432,
-      username: 'postgres',
-      password: 'postgres',
-      database: 'FamilyCashManager',
-      entities: [User],
-      synchronize: true,
-    }),
-    TypeOrmModule.forFeature([User]),
+    TypeOrmModule.forFeature([User , Expense]),
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy],

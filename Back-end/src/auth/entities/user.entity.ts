@@ -7,7 +7,7 @@ import { Expense } from '../../expense/entity/expense.entity';
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
-  
+
   @IsEmail()
   @Column()
   email: string;
@@ -21,7 +21,7 @@ export class User {
   @Column({ nullable: true })
   role: string;
 
-  @OneToMany(() => Expense, (expense) => expense.user)
+  @OneToMany(() => Expense, (expense) => expense.child)
   expenses: Expense[];
 
   async checkPassword(password: string) {

@@ -8,7 +8,7 @@ import {
   Body,
 } from '@nestjs/common';
 import { ExpenseService } from './expense.service';
-import { CreateExpenseDto, UpdateExpenseDto } from './dto'; // Assuming you have these DTOs
+import { CreateExpenseDto, UpdateExpenseDto } from './dto/expense.dto'; 
 
 @Controller('expense')
 export class ExpenseController {
@@ -20,7 +20,7 @@ export class ExpenseController {
   }
 
   @Get(':id')
-  getExpenseById(@Param('id') id: string) {
+  getExpenseById(@Param('id') id: any) {
     return this.expenseService.getExpenseById(id);
   }
 
@@ -31,14 +31,14 @@ export class ExpenseController {
 
   @Put(':id')
   updateExpense(
-    @Param('id') id: string,
+    @Param('id') id: any,
     @Body() updateExpenseDto: UpdateExpenseDto,
   ) {
     return this.expenseService.updateExpense(id, updateExpenseDto);
   }
 
   @Delete(':id')
-  deleteExpense(@Param('id') id: string) {
+  deleteExpense(@Param('id') id: any) {
     return this.expenseService.deleteExpense(id);
   }
 }

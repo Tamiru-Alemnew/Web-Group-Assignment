@@ -19,5 +19,5 @@ export class Expense {
   child: User;
 
   @Column()
-  category: Category;
+  categoryId: number;
 }
