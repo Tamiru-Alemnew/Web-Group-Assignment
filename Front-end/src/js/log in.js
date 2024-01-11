@@ -14,16 +14,14 @@ document.getElementById("loginForm").addEventListener("submit", async (event) =>
   });
 
   if (!response.ok) {
-    const errorMessage = await response.text();
-    document.getElementById("loginErrorMessage").textContent = errorMessage;
+  const errorMessageResponse = await response.text();
+  const errorMessage = JSON.parse(errorMessageResponse);
+  document.getElementById("loginErrorMessage").textContent = errorMessage.message;
   } else {
-    // Assuming your server returns a token upon successful login
     const { token, role } = await response.json();
     
-    // Store the token in localStorage or a secure cookie
     localStorage.setItem("token", token);
 
-    // Redirect based on the user's role
     if (role === "parent") {
       window.location.href = "parent.html";
     } else if (role === "children") {
