@@ -3,6 +3,7 @@ import {
   Controller,
   Get,
   InternalServerErrorException,
+  Patch,
   Post,
   Req,
   Res,
@@ -23,9 +24,7 @@ export class AuthController {
     private readonly jwtService: JwtService,
   ) {}
   @Post('signup')
-  signUp(
-    @Body() authCredentialsDto: AuthCredentialsDto,
-  ): Promise<void> {
+  signUp(@Body() authCredentialsDto: AuthCredentialsDto): Promise<void> {
     return this.authService.signUp(authCredentialsDto);
   }
 
@@ -49,11 +48,23 @@ export class AuthController {
       }
       const email = data['email'];
       const user = await this.authService.findOne(email);
-      const {id, password, salt, expenses, checkPassword, ...result } = user;
+      const { id, password, salt, expenses, checkPassword, ...result } = user;
 
       return result;
     } catch (e) {
       throw new UnauthorizedException();
     }
+  }
+
+  @Get('getallUsers')
+  async getAllUsers(): Promise<User[]> {
+    return await this.authService.getAllUsers();
+  }
+  @Patch('updateRole')
+  async updateRole(
+    @Body('id') id: any,
+    @Body('role') role: any,
+  ): Promise<void> {
+    return await this.authService.updateRole(id, role);
   }
 }

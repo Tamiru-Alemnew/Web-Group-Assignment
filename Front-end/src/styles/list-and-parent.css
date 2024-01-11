@@ -154,7 +154,25 @@ tfoot td {
 .box:hover {
     background-color: #466946;
 }
+.button{
+    background-color: #ffffff; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px;
 
+}
+.save-changes{
+    background-color: #787d79; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 10px;
+}
 @media (max-width: 600px) {
     body {
         font-size: 14px;

@@ -83,7 +83,16 @@ export class AuthService {
       return { email: null, role: null };
     }
   }
-
+  async getAllUsers(): Promise<User[]> {
+      return await this.userRepository.find();
+    }
+async updateRole(id:any, role:any ): Promise<void> {
+    const user: User = await this.userRepository.findOne({
+      where: { id },
+    });
+    user.role = role;
+    await this.userRepository.save(user);
+  }
   async hashPassword(password: string, salt: string): Promise<string> {
     return await bcrypt.hash(password, salt);
   }
