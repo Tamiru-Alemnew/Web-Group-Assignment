@@ -82,3 +82,68 @@ for (const expense of expenses) {
     dateCell.textContent = expense.date;
     deleteCell.appendChild(deleteBtn);
 }
+fetch('http://localhost:3000/expense')
+  .then(response => response.json())
+  .then(expenses => {
+    console.log(expenses);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+const form = document.getElementById('category-select');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const newItem = {
+    category: document.getElementById('category-select').value,
+  };
+  try {
+    const response = await fetch('http://localhost:3000/expense', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newItem),
+    });
+    if (response.ok) {
+      console.log('Expense added successfully');
+    } else {
+      console.error('Failed to add expense:' );
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+});
+
+const expenseIdToUpdate = 'category-select';
+const updatedItem = {
+  category: document.getElementById('category-select').value,
+};
+
+try {
+  const response = await fetch(`http://localhost:3000/expense/category-select`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(updatedItem),
+  });
+  if (response.ok) {
+    console.log('Expense updated successfully');
+  } else {
+    console.error('Failed to update expense:', );
+  }
+} catch (error) {
+  console.error('Error:', error);
+}
+
+const expenseIdToDelete = 'category-select';
+
+try {
+  const response = await fetch(`http://localhost:3000/expense/category-select`, {
+    method: 'DELETE',
+  });
+  if (response.ok) {
+    console.log('Expense deleted successfully');
+  } else {
+    console.error('Failed to delete expense:', );
+  }
+} catch (error) {
+  console.error('Error:', error);
+}
