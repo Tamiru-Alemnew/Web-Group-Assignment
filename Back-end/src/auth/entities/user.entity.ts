@@ -2,7 +2,7 @@ import { Column, Entity, OneToMany, PrimaryGeneratedColumn, Unique } from 'typeo
 import * as bcrypt from 'bcrypt';
 import { IsEmail } from 'class-validator';
 import { Expense } from '../../expense/entity/expense.entity';
-import { UserRole } from 'src/userRole/role.enum';
+import { UserRole } from '../../userRole/role.enum';
 @Entity()
 @Unique(['email'])
 export class User {

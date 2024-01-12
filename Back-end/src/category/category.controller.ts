@@ -9,10 +9,10 @@ import {
 } from '@nestjs/common';
 import { CategoryService } from './category.service';
 import { Category } from './category.entity';
-import { RolesGuard } from 'src/userRole/roles.guard'; 
+import { RolesGuard } from '../userRole/roles.guard'; 
 import { UseGuards } from '@nestjs/common';
-import { UserRole } from 'src/userRole/role.enum';
-import { Roles } from 'src/userRole/roles.decorator';
+import { UserRole } from '../userRole/role.enum';
+import { Roles } from '../userRole/roles.decorator';
 
 @UseGuards(RolesGuard)
 @Controller('category')
