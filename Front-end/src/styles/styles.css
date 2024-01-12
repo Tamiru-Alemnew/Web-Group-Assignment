@@ -5,12 +5,17 @@ body {
 
 .container {
   max-width: 400px;
-  margin: 0 auto;
+  margin: 50px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #f8f9fa;
   border: 1px solid #ddd;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform .2s; 
+}
+
+.container:hover {
+  transform: scale(1.02); 
 }
 
 .form-group {
@@ -24,7 +29,8 @@ body {
 }
 
 .form-group input {
-  width: 100%;
+  width: 80%;
+  height: 25px;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -39,9 +45,9 @@ body {
 
 .form-group button {
   display: block;
-  width: 100%;
+  width: 85%;
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #2f372f;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -59,38 +65,20 @@ body {
   position: relative;
 }
 
-/* .form-group p {
-  margin: 0;
-  font-size: 12px;
-  color: #999;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-} */
-.OR{
-  text-align: center;
-}
-.container {
-  max-width: 500px;
-  margin: 50px auto;
-  text-align: center;
-  margin-bottom: 10px;
-}
 
 h1 {
   color: #333;
 }
-.google-button{
-  max-width: 500px;
-  /* margin: 10px auto; */
-  /* text-align: center;
-  margin-top: 1px;
-  padding-TOP: 5px; */
 
-}
-.header{
-  text-align: center;
+.header {
+    background-color: #393d42; 
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 35px;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
 
   input, select {
@@ -101,10 +89,12 @@ h1 {
   }
 
   button {
-    background-color: #4CAF50;
+    background-color: #303630;
     color: white;
     padding: 10px 20px;
     margin: 20px 0;
+    height: 40px;
+    width: 80%;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -112,4 +102,7 @@ h1 {
 
   button:hover {
     background-color: #45a049;
+  }
+  #role{
+    width: 85%;
   }

@@ -1,194 +1,206 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    background-color: rgba(248, 255, 244, 1);
-  }
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
+    background-color: #f8fff4; /* Light green background */
+    color: #333;
+}
 
-        header {
-            background-color: #2d3438;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
+header {
+    background-color: #2d3438;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
 
-        .logo-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.logo-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .logo-content img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
+.logo-content img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+}
 
-        .logo-content div {
-            text-align: left;
-        }
+.logo-content div {
+    text-align: left;
+}
 
-        h4 {
-            margin: 0;
-            font-size: 1.5em;
-        }
+h4 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #90be6d; /* Light green text color */
+}
 
-        p {
-            margin: 0;
-            font-size: 1em;
-            color: #ecf0f1;
-        }
+p {
+    margin: 0;
+    font-size: 1em;
+    color: #b2b2b2; /* Light gray text color */
+}
 
-        hr {
-            border: 0;
-            height: 1px;
-            background: #34495e;
-            margin: 20px 0;
-        }
+hr {
+    border: 2px;
+    height: 2px;
+    background: #f3f6f8;
+    margin: 20px 0;
+}
 
-  h2 {
-    text-align: center;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+h2 {
+    text-align: center;
+    font-family: 'Cambria', Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #2d3438; /* Dark gray text color */
+}
 
-  }
-
-  .input-section {
+.input-section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     padding-top: 60px;
-  }
+    background-color: #fff; /* White background */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px;
+}
 
-  .input-section label {
+.input-section label {
     font-weight: bold;
     margin-right: 10px;
-  }
+}
 
-  .input-section input[type="number"], .input-section input[type="date"] {
-    padding: 5px;
+.input-section input[type="number"],
+.input-section input[type="date"],
+.input-section select {
+    padding: 10px;
     margin-right: 10px;
-  }
+    border: 1px solid #dcdcdc; /* Light gray border */
+    border-radius: 5px;
+}
 
-  .input-section button {
-    padding: 5px 10px;
-    background-color: rgba(90, 154, 102, 1);
-    color: white;
+.input-section button {
+    padding: 10px 20px;
+    background-color: #5a9a66; /* Dark green button color */
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-  }
+}
 
-  .expenses-list {
+.expenses-list {
     margin: 20px;
-  }
+}
 
-  table {
+table {
     width: 100%;
     border-collapse: collapse;
-  }
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflowing box shadow */
+}
 
-  th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+th, td {
+    border: 1px solid #dcdcdc; /* Light gray border */
+    padding: 15px;
     text-align: left;
-  }
+}
 
-  th {
-    background-color: rgba(90, 154, 102, 1);
-    color: white;
-  }
+th {
+    background-color: #5a9a66; /* Dark green header background */
+    color: #fff;
+}
 
-  tfoot td {
+tfoot td {
     font-weight: bold;
-  }
+}
 
-  .delete-btn {
-    padding: 5px 10px;
+.delete-btn {
+    padding: 10px 20px;
     background-color: #f44336;
-    color: white;
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-  }
-  .container {
+}
+
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .box {
+}
+
+.box {
     width: 200px;
     height: 100px;
     border-radius: 25px;
-    background-color: rgba(90, 154, 102, 1);
+    background-color: rgb(67, 61, 61); 
+    color: white;
     margin-top: 50px;
-  }
-  .box a{
+     font-size: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.box a {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-decoration: none;
     font-size: 20px;
-    color: rgb(49, 14, 14);
-  }
-  .box:hover{
-    background-color: rgb(70, 105, 70);
-  }
-  
+    color:white; 
+}
+
+.box:hover {
+    background-color: #466946; /* Darker green on hover */
+}
+
 @media (max-width: 600px) {
     body {
-      font-size: 14px; 
+        font-size: 14px;
     }
     p {
-        margin-left: 200px;
+        margin-left: 0;
     }
-    
+
     .input-section {
-      flex-direction: column; 
+        flex-direction: column;
     }
-    
+
     .input-section label {
-      margin-bottom: 5px; 
+        margin-bottom: 5px;
     }
-    
+
     .input-section input,
     .input-section select {
-      width: 100%; 
-      margin-bottom: 10px; 
+        width: 100%;
+        margin-bottom: 10px;
     }
-    
+
     .expenses-list table {
-      font-size: 12px; 
+        font-size: 12px;
     }
-  }
-  
- 
-  @media (min-width: 601px) and (max-width: 900px) {
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
     body {
-      font-size: 16px; 
+        font-size: 16px;
     }
     p {
-        margin-left: 300px;;
+        margin-left: 0;
     }
-    
+
     .expenses-list table {
-      font-size: 14px; 
+        font-size: 14px;
     }
-  }
-  
-  
-  @media (min-width: 901px) {
+}
+
+@media (min-width: 901px) {
     body {
-      font-size: 18px; 
+        font-size: 18px;
     }
-    
+
     .expenses-list table {
-      font-size: 16px; 
+        font-size: 16px;
     }
-  }
+}
