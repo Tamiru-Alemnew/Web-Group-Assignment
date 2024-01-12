@@ -132,3 +132,11 @@ body{
     align-items: center;
     justify-content: space-between;
 }
+.card .amount-cat .but{
+    padding: 10px 23px;
+    background-color: #ff511c;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
