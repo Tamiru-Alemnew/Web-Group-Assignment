@@ -1,7 +1,7 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    background-color: #f8fff4; /* Light green background */
+    background-color: #f8fff4;
     color: #333;
 }
 
@@ -23,7 +23,7 @@ header {
     height: 80px;
     border-radius: 50%;
     margin-right: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .logo-content div {
@@ -33,13 +33,13 @@ header {
 h4 {
     margin: 0;
     font-size: 1.5em;
-    color: #90be6d; /* Light green text color */
+    color: #90be6d;
 }
 
 p {
     margin: 0;
     font-size: 1em;
-    color: #b2b2b2; /* Light gray text color */
+    color: #b2b2b2; 
 }
 
 hr {
@@ -52,7 +52,7 @@ hr {
 h2 {
     text-align: center;
     font-family: 'Cambria', Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #2d3438; /* Dark gray text color */
+    color: #2d3438; 
 }
 
 .input-section {
@@ -62,9 +62,9 @@ h2 {
     align-items: center;
     padding: 10px;
     padding-top: 60px;
-    background-color: #fff; /* White background */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
-    border-radius: 10px; /* Rounded corners */
+    background-color: #fff; 
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
     margin: 20px;
 }
 
@@ -78,13 +78,13 @@ h2 {
 .input-section select {
     padding: 10px;
     margin-right: 10px;
-    border: 1px solid #dcdcdc; /* Light gray border */
+    border: 1px solid #dcdcdc; 
     border-radius: 5px;
 }
 
 .input-section button {
     padding: 10px 20px;
-    background-color: #5a9a66; /* Dark green button color */
+    background-color: #5a9a66; 
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -98,19 +98,19 @@ h2 {
 table {
     width: 100%;
     border-collapse: collapse;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Hide overflowing box shadow */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+    overflow: hidden;
 }
 
 th, td {
-    border: 1px solid #dcdcdc; /* Light gray border */
+    border: 1px solid #dcdcdc; 
     padding: 15px;
     text-align: left;
 }
 
 th {
-    background-color: #5a9a66; /* Dark green header background */
+    background-color: #5a9a66; 
     color: #fff;
 }
 
@@ -141,7 +141,7 @@ tfoot td {
     color: white;
     margin-top: 50px;
      font-size: 20px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
 }
 
 .box a {
@@ -152,7 +152,7 @@ tfoot td {
 }
 
 .box:hover {
-    background-color: #466946; /* Darker green on hover */
+    background-color: #466946;
 }
 
 @media (max-width: 600px) {

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Edit Categories</title>
+    <link rel="stylesheet" href="./styles/edit-catagories.css">
+</head>
+<body>
+    <header>       
+        
+        <div class="logo-content">
+            <img src="../Public/exp.png" alt="logo" class="img">
+            <div>
+                <h4>Money Matters</h4>
+                <p>A collaborative approach for family budgeting!</p>
+            </div>
+        </div>
+ 
+        <hr>
+    </header>
+    <div class="cont">
+        <h2 style="color: #5d6166; text-align: center; font-family: Arial, sans-serif;">Add categories to help your family track expenses effectively</h2>
+        <ul id="categoryList">
+            <li>
+                <span class="name">Food</span>
+                <span class="actions">
+                    <button onclick="editCategory(this)">Edit</button>
+                    <button onclick="deleteCategory(this)">Delete</button>
+                </span>
+            </li>
+            <li>
+                <span class="name">School</span>
+                <span class="actions">
+                    <button onclick="editCategory(this)">Edit</button>
+                    <button onclick="deleteCategory(this)">Delete</button>
+                </span>
+            </li>
+           
+        </ul>
+        <input type="text" id="newCategoryInput" placeholder="Enter your Categories">
+        <button onclick="addCategory()">Add Categories</button>
+    </div>
+
+    <script src="./js/existingCat.js"></script>
+</body>
+</html>
