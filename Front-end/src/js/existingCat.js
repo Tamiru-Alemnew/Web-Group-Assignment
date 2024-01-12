@@ -4,14 +4,13 @@ document
     event.preventDefault();
 
     const title = document.getElementById("title").value;
-    const des = document.getElementById("des").value;
-    const image = document.getElementById("image").value;
-    const amount = document.getElementById("amount").value;
+    const des = document.getElementById("des-cat").value;
+    const amount = document.getElementById("amount-cat").value;
 
     const response = await fetch("http://localhost:3000/auth/existingCategories", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ title, des, image ,amount }),
+      body: JSON.stringify({ title, des, amount }),
     });
