@@ -40,7 +40,7 @@ export class AuthService {
           `User with the email ${user.email} already exists.`,
         );
       } else {
-        console.log(error)
+        console.log(error);
         throw new InternalServerErrorException();
       }
     }
@@ -48,23 +48,23 @@ export class AuthService {
 
   async logIn(
     authCredentialsDto: AuthCredentialsDto,
-  ): Promise<{ accesToken: string }> {
-    const email: string =
+  ): Promise<{ accesToken: string; role: string }> {
+    const { email, role } =
       await this.validateUserCredentials(authCredentialsDto);
 
     if (!email) {
       throw new UnauthorizedException(`Something went wrong`);
     }
 
-    const payload: JwtPayload = { email};
+    const payload: JwtPayload = { email };
     const accesToken = await this.jwtService.sign(payload);
 
-    return { accesToken };
+    return { accesToken, role };
   }
 
   async validateUserCredentials(
     authCredentialsDto: AuthCredentialsDto,
-  ): Promise<string> {
+  ): Promise<{ email: string; role: string }> {
     let { email, password } = authCredentialsDto;
 
     const user: User = await this.userRepository.findOne({
@@ -72,9 +72,9 @@ export class AuthService {
     });
 
     if (user && (await user.checkPassword(password))) {
-      return email;
+      return { email: user.email, role: user.role };
     } else {
-      return null;
+      return { email: null, role: null };
     }
   }
 

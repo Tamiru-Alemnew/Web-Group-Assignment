@@ -22,7 +22,7 @@ export class User {
   @Column({ type: 'enum', enum: UserRole, nullable: true })
   role: UserRole;
 
-  @OneToMany(() => Expense, (expense) => expense.child)
+  @OneToMany(() => Expense, (expense) => expense.user)
   expenses: Expense[];
 
   async checkPassword(password: string) {

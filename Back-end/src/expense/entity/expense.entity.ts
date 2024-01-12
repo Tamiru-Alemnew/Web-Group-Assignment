@@ -6,9 +6,6 @@ export class Expense {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  title: string;
-
   @Column('decimal')
   amount: number;
 
@@ -16,8 +13,8 @@ export class Expense {
   date: Date;
 
   @ManyToOne(() => User, (user) => user.expenses)
-  child: User;
+  user: User;
 
   @Column()
-  categoryId: number;
+  category: string;
 }

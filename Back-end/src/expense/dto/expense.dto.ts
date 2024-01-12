@@ -1,8 +1,6 @@
 import { IsString, IsNumber, IsDate } from 'class-validator';
 
 export class CreateExpenseDto {
-  @IsString()
-  title: string;
 
   @IsNumber()
   amount: number;
@@ -11,15 +9,13 @@ export class CreateExpenseDto {
   date: Date;
 
   @IsNumber()
-  childId: number;
+  userId: number;
 
   @IsNumber()
   categoryId: number;
 }
 
 export class UpdateExpenseDto {
-  @IsString()
-  title: string;
 
   @IsNumber()
   amount: number;
@@ -30,6 +26,6 @@ export class UpdateExpenseDto {
   @IsNumber()
   childId: number;
 
-  @IsNumber()
+  @IsString()
   categoryId: number;
 }

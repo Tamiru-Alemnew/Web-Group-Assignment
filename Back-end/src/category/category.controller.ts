@@ -29,19 +29,19 @@ export class CategoryController {
     return this.categoryService.findOne(id);
   }
 
-  @Roles(UserRole.Parent)
+  // @Roles(UserRole.Parent)
   @Post()
   createCategory(@Body() category: Category) {
     return this.categoryService.create(category);
   }
 
-  @Roles(UserRole.Parent)
+  // @Roles(UserRole.Parent)
   @Put(':id')
   updateCategory(@Param('id') id: any, @Body() category: Category) {
     return this.categoryService.update(id, category);
   }
   
-  @Roles(UserRole.Parent)
+  // @Roles(UserRole.Parent)
   @Delete(':id')
   deleteCategory(@Param('id') id: any) {
     return this.categoryService.remove(id);

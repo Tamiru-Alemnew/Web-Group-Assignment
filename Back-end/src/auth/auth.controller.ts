@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Get,
+  InternalServerErrorException,
   Post,
   Req,
   UnauthorizedException,
@@ -30,5 +31,15 @@ export class AuthController {
     @Body() authCredentialsDto: AuthCredentialsDto,
   ): Promise<{ accesToken: string }> {
     return await this.authService.logIn(authCredentialsDto);
+  }
+
+  @Get('user')
+  async getUser(@GetUser() user: User) {
+    try {
+      return { user: user };
+    } catch (error) {
+      console.error(error);
+      throw new InternalServerErrorException('Error getting user');
+    }
   }
 }
