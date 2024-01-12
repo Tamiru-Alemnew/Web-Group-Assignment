@@ -25,7 +25,6 @@ async function getUser() {
   return user;
 }
 
-// Add an expense when the "Add" button is clicked
 document.getElementById('add-btn').addEventListener('click', async function() {
   const category = document.getElementById('category-select').value;
   const amount = document.getElementById('amount-input').value;
@@ -36,14 +35,12 @@ document.getElementById('add-btn').addEventListener('click', async function() {
   const success = await createExpense(expense);
 
   if (success) {
-    // If the expense was successfully created, clear the input fields
     document.getElementById('amount-input').value = '';
     document.getElementById('date-input').value = '';
     await populateTable();
   }
 });
 
-// Create an expense
 async function createExpense(expense) {
   const response = await fetch('http://localhost:3000/expense', {
     method: 'POST',
@@ -63,7 +60,10 @@ async function getAllExpenses() {
 }
 
 async function populateTable() {
-  const expenses = await getAllExpenses();
+  const user = await getUser();
+  const newexpenses = await getAllExpenses();
+  console.log(user)
+  const expenses = newexpenses.filter((expense) => expense.userId === user.id);
   const tableBody = document.getElementById("expnese-table-body");
 
   let totalAmount = 0;
@@ -88,9 +88,7 @@ async function populateTable() {
     button.addEventListener("click", async function () {
       const id = this.dataset.id;
       const success = await deleteExpense(id);
-
       if (success) {
-        // If the expense was successfully deleted, repopulate the table
         await populateTable();
       }
     });
