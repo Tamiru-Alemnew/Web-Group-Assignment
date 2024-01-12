@@ -21,7 +21,9 @@ async function getAllCategories() {
 // Fetch the user
 async function getUser() {
   const response = await fetch('http://localhost:3000/auth/user');
+  console.log(response)
   const user = await response.json();
+  console.log(user)
   return user;
 }
 
