@@ -49,7 +49,6 @@ export class AuthController {
       }
       const email = data['email'];
       const user = await this.authService.findOne(email);
-      console.log(user, 'user');
       const {id, password, salt, expenses, checkPassword, ...result } = user;
 
       return result;
